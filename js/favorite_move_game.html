@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorite Move </title>
+</head>
+<body>
+
+
+    <script>
+        let favorite = "three idots";
+        let guess = prompt("Enter the favorite move: if you want to quit write the quit", "");
+        while (true) {
+
+            if (guess == favorite) {
+                document.write("Congrates! you wen the game");
+                break;
+            } else if (guess == "quit") {
+                document.write("You quit the game!");
+                break;
+            } else {
+                guess = prompt("Wrong Answer Guess Again! if you want to quit write quit")
+            }
+        }
+    </script>
+</body>
+</html>

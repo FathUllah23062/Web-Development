@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practiceQs1</title>
+</head>
+<body>
+
+
+    <script>
+        // Q1: write your name is a string and print its length 
+        let name = "Fath ullah";
+        document.write(name.length + "<br/>")
+
+        // Q2: print first character of your name;
+        document.write(name[0] + "<br/>");
+
+        // Q2: print last character of your name;
+        document.write(name[9] + "<br/>");
+
+        // Q3: make a trafic rules using if statement 
+        let color = "green";
+        if (color === "red") {
+            document.write("Stop! <br/>")
+        }
+        if (color === "yellow") {
+            document.write("Slow down! <br/>")
+        }
+        if (color === "green") {
+            document.write("Go! <br/>")
+        }
+        // Q3: make a system to calculate the price of popcorns based on the size; 
+        let size = "xl";
+        let price = 0;
+        if (size === "xl") {
+            price = 250;
+            document.write(`The price of popcorn is : ${price} <br/>`)
+        }
+        else if (size === "l") {
+            price = 200;
+            document.write(`The price of popcorn is : ${price}`)
+        }
+        else if (size === "m") {
+            price = 100;
+            document.write(`The price of popcorn is : ${price}`)
+        }
+
+        else if (size === "s") {
+            price = 50;
+            document.write(`The price of popcorn is : ${price}`)
+        }
+        else {
+            document.write("You have entered the invilade size!")
+        }
+
+        // Q4: make a logic for the good string will be the string which start from a and its length  is greater than 3;  
+
+        let string = "apple";
+        if ((string[0] === "a") && (string.length > 3)) {
+            document.write(`The string is good string which is : ${string} <br/>`);
+        }
+        else {
+            document.write(`The string is bad  which is not startin from a or its length is smaller the 3: ${string} <br/>`);
+        }
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spreeding</title>
+</head>
+<body>
+
+    <script>
+        let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+        let even = [2, 4, 6, 8, 10];
+        let odd = [1, 3, 5, 7, 9];
+        // to finde the max or min number using spreed concipt;
+        let min = Math.min(...arr);
+        let max = Math.max(...arr);
+        document.write(`The maximum number in array is : ${max}`);
+        document.write(`<br/>The mainumu number in array is : ${min}`);
+        let whollNumbers = [...odd, ...even];
+        document.write(`<br/>The combination of odd and even : ${whollNumbers}`)
+        // we can make a copy of the array using the spreed, and if we do any changing in copeid array it will never affect the original array like;
+        let arr2 = ["Ali", "Burhan", "Faisal"];
+        let arr3 = [...arr2];
+        document.write(`<br/>this is the of arr2 {${arr3}`);
+        arr3.push("Khan");
+        document.write(`<br/>this is a little change in arr3 {${arr3}`);
+        document.write(`<br/>and this change  is not affect the arr2 {${arr2}`);
+
+        // spreed a object 
+        let student1 = {
+            name: "Ali",
+            age: 22,
+            address: "Mayar"
+        };
+        let student2 = {
+            name: "Imad",
+            age: 20,
+            address: "Kambat"
+        };
+        // here we spreed the object to variables using spreed operator (...);
+        const { name, age, address } = { ...student1 };
+        document.write(`<br/>The name which is spreed from object : ${name}`);
+        document.write(`<br/>The age which is spreed from object : ${age}`);
+        document.write(`<br/>The address which is spreed from object : ${address}`);
+        let newObj = { ...student1 };
+        newObj.marks = 80;
+        newObj.name = "Burhan";
+        // we can do all the thing with object spreeding what ever we did with the array spreeding ;
+        const total = { ...student1, ...student2 };
+
+        // rest operator
+        //rest operator means to collect a single single element and make it array;
+        function restFunc(...args) {
+            for (item of args) {
+                document.write("<br/>" + item + "<br/>");
+            }
+        }
+        restFunc("Rest1", "Rest2", "Rest3", "Rest4", "Rest5");
+        let objB = {
+            name: "Burhan",
+            address: "Badin"
+        }
+
+        function restFunc2({ ...obj }) {
+            document.write(obj.name);
+            document.write(obj.address);
+        }
+        restFunc2(
+            objB
+        );
+        // destructurig of array
+        let dArray = ["Ali", "Faisal", "Salman", "Burhan"];
+        let [ali, faisal, ...other] = dArray;
+        document.write(`<br/>The destructure element form array : ${ali}<br/>`);
+        document.write(`The destructure element form array : ${faisal} <br/>`);
+        document.write(`The rest element of array : ${other}`);
+
+        // destructurig of object;
+        const dObj = {
+            username: "Burhan",
+            useraddress: "Baden",
+            userMarsk: 89,
+            userAge: 22
+
+        }
+        const { username, useraddress, ...rest } = dObj;
+        document.write(`<br/>The destructured element from object : ${username} <br/>`);
+        document.write(`The destructured element from object : ${useraddress}<br/>`);
+    </script>
+</body>
+</html>

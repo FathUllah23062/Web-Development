@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simon game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .main {
+            width: 100vw;
+            height: 100vh;
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btns {
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+            cursor: pointer;
+            box-shadow: 1px 1px 21px #918b8b;
+            border-radius: 10px;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+
+        h2 {
+            text-align: center;
+            color: white;
+        }
+
+
+        .flash {
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h2>Press Space to Start the Game:</h2>
+        <h3 id="score"></h3>
+
+        <div>
+            <button class="btns red" id="red"></button>
+            <button class="btns green" id="green"></button>
+        </div>
+        <div>
+            <button class="btns blue" id="blue"></button>
+            <button class="btns yellow" id="yellow"></button>
+        </div>
+    </div>
+
+    <script>
+        let colors = ["red", "green", "blue", "yellow"];
+        let h2 = document.querySelector("h2");
+        let level = 0;
+        let start = false;
+        let gameSequence = [];
+        let userSequence = [];
+        let main = document.querySelector(".main");
+        let score = document.querySelector("#score");
+        // to flash the random button on pressing key;
+        document.addEventListener("keypress", () => {
+            if (start == false) {
+                start = true;
+                levelUp();
+
+            }
+
+        })
+
+        function levelUp() {
+            userSequence = [];
+            level++;
+            h2.innerText = `Level : ${level}`;
+            let randomIndex = Math.floor(Math.random() * 4);
+            let randomColor = colors[randomIndex];
+            let randomButton = document.querySelector(`.${randomColor}`);
+            btnFlash(randomButton);
+            gameSequence.push(randomColor);
+        }
+        function btnFlash(btn) {
+            btn.classList.add("flash");
+            setTimeout(() => {
+                btn.classList.remove("flash");
+            }, 500);
+        }
+
+        // to flash the  button on click;
+        function btnPressed() {
+            // this keyword is here the current pressed button;
+            let btn = this;
+            btnFlash(btn);
+            let btnColor = btn.getAttribute("id");
+            userSequence.push(btnColor);
+            checkSequnce(userSequence.length - 1);
+
+
+        }
+        let allBtns = document.querySelectorAll("button");
+        for (btn of allBtns) {
+            btn.addEventListener("click", btnPressed)
+        };
+        // to check the gameSequence and userSequence  if both are the same then levelUp;
+        function checkSequnce(idx) {
+
+            if (gameSequence[idx] === userSequence[idx]) {
+                if (gameSequence.length == userSequence.length) {
+                    setTimeout(levelUp, 1000)
+                }
+            } else {
+                h2.innerText = `Game Over! Press any key to Restart`;
+                score.style.color = "white";
+                score.innerText = ` Your Score is : ${level} `
+                main.style.backgroundColor = "red";
+                setTimeout(() => {
+                    main.style.backgroundColor = "black";
+                }, 1000);
+
+            }
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom manipulation</title>
+    <style>
+        .green {
+            color: green;
+            text-decoration: underline green wavy;
+        }
+    </style>
+</head>
+<body>
+    <h2 class="car" id="carId">This is a car</h2>
+    <img src="../assets/car.jpg" alt="" class="car-img">
+    <p>this the car image to do some dom manipulation on the using js</p>
+
+    <script>
+        let h2 = document.querySelector("h2");
+        let img = document.querySelector("img");
+
+        // we can see the class list of a Element using the h2.classList  property;
+        // we can add a class to a Element using h2.classList.add("class name"); like in below example;
+        // the properties of green class will add to the h2 Element;
+        h2.classList.add("green");
+
+        // we can remove the class form the Element using h2.classList.remove("class name") ;
+
+        // we can create a new Element using the document.createElement
+        let button = document.createElement("button");
+        button.innerText = "Click Me";
+        img.insertAdjacentElement("beforebegin", button);
+
+        // to remove a Element form the page we can write this img.remove();
+
+
+
+
+
+    </script>
+</body>
+</html>

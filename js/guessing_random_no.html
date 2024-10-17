@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guessing Random No</title>
+</head>
+<body>
+
+    <script>
+        let maxNumber = prompt("Enter the maximum number to geuse the random number between it :", "");
+        let randomNo = Math.floor(Math.random() * maxNumber) + 1;
+        console.log(randomNo)
+        let guess = prompt("Guess the generated random number: write quit to close", "");
+        while (true) {
+            if (guess == randomNo) {
+                document.write("Congrates! you find the random number! Refresh to play again");
+                break;
+            } else if (guess == "quit") {
+                document.write("You quit the game!");
+                break;
+            }
+            else {
+                guess = prompt("Wrong, Guess Again! write quit to close", "");
+            }
+        }
+    </script>
+</body>
+</html>

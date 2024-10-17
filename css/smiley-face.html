@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smiely Pace</title>
+    <style>
+        .main {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: dodgerblue;
+            position: absolute;
+
+        }
+
+        .main .white-eyes {
+            width: 59px;
+            height: 25px;
+            border-radius: 100%;
+            background-color: white;
+        }
+
+        .main .black-eyes {
+            width: 15px;
+            height: 15px;
+            border-radius: 100%;
+            background-color: black;
+            position: absolute;
+            left: 38%;
+            top: 15%;
+        }
+
+        .main .left-eye {
+            position: absolute;
+            top: 22%;
+            left: 10%;
+        }
+
+        .main .right-eye {
+            position: absolute;
+            top: 22%;
+            right: 10%;
+        }
+
+        .mouth {
+            width: 100px;
+            height: 50px;
+            background-color: black;
+            position: absolute;
+            top: 53%;
+            left: 25%;
+            border-radius: 40px 40px 7px 7px
+        }
+    </style>
+</head>
+<body>
+    <h3>Click the arrow butons to move</h3>
+    <div class="main">
+        <div class="left-eye white-eyes">
+            <div class="black-eyes"></div>
+        </div>
+        <div class="right-eye white-eyes">
+            <div class="black-eyes"></div>
+        </div>
+        <div class="mouth"></div>
+    </div>
+
+    <script>
+        let main = document.querySelector(".main");
+        document.addEventListener("keyup", (event) => {
+            if (event.key == "ArrowUp") {
+                main.style.top = "0%";
+            }
+            else if (event.key == "ArrowDown") {
+                main.style.bottom = "0%";
+            }
+            else if (event.key == "ArrowRight") {
+                main.style.right = "0%";
+            }
+            else if (event.key == "ArrowLeft") {
+                main.style.left = "0%";
+            } else {
+                document.write("You enter the invilid key please presss only arrow keys!");
+            }
+
+        });
+    </script>
+</body>
+</html>

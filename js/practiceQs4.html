@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practiceQs4</title>
+</head>
+<body>
+
+
+    <script>
+        // Qs1. Write a JavaScript function that returns array elements larger than a number.
+        function arrayElements(arr, num) {
+            for (item of arr) {
+                if (item > num) {
+                    document.write(item + "<br/>");
+                }
+            }
+        }
+        let arr = [2, 4, 6, 10, 20, 30];
+        let num = 8;
+        arrayElements(arr, num);
+
+        // Qs2. Write a JavaScript function to extract unique characters from a string.
+        // Example: str = “abcdabcdefgggh” ans = “abcdefgh”;
+        function uniqueChar() {
+            let str = "abcdabcdefgggh";
+            let ans = "";
+            for (let i = 0; i < str.length; i++) {
+                let curentChar = str[i];
+                if (ans.indexOf(curentChar) == -1) {
+                    ans += str[i]
+                }
+            }
+            document.write(ans + "<br/>")
+
+        }
+        uniqueChar();
+
+        // Qs3. Write a JavaScript function that accepts a list of country names as input and
+        // returns the longest country name as output.
+        // Example : country = ["Australia", "Germany", "United States of America"] output :
+        // "United States of America"
+        let country = ["Australia", "Germany", "United States of America"];
+        let largerCount = "";
+        function largerCountry(count, larCount) {
+            for (item of count) {
+                if (item.length > larCount.length) {
+                    larCount = item;
+                }
+            }
+            document.write(`The large country in the above array is : ${larCount}`)
+        }
+        largerCountry(country, largerCount);
+
+        // Qs4. Write a JavaScript function to count the number of vowels in a String
+        // argument.
+
+        function findVowels() {
+            let string = "thisismeiwantto";
+            let count = 0;
+            for (let i = 0; i < string.length; i++) {
+                if (
+                    string.charAt(i) == "a" ||
+                    string.charAt(i) == "e" ||
+                    string.charAt(i) == "i" ||
+                    string.charAt(i) == "o" ||
+                    string.charAt(i) == "u"
+
+                ) {
+                    count++;
+
+                }
+            }
+            document.write(` <br/>The number of the vowels in above string is : ${count}`)
+        }
+        findVowels();
+    </script>
+</body>
+</html>

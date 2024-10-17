@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practiceQs5</title>
+</head>
+<body>
+
+    <script>
+        // Q1:write the arrow function to  return the square of the number;
+        let square = (n) => {
+            document.write(n * n + "<br/>");
+
+        }
+        square(8);
+
+        // Q2: write a function that return the hello word 5 time in setInterval of 2s;
+        // let helloWord = () => {
+        //     let count = 0;
+        //     let interval = setInterval(() => {
+        //         document.write("Hello word <br/>")
+        //         count++;
+        //         if (count == 5) {
+        //             clearInterval(interval)
+        //         }
+
+        //     }, 2000);
+
+
+        // };
+        // helloWord();
+
+        // Q3: write the arrow function named arrayAverage that accepts an array of numbers and return the average of those numbers;
+        let arrayAverage = (arr) => {
+            let sum = 0;
+            let avg = 0;
+            for (item of arr) {
+                sum += item;
+                avg = sum / arr.length;
+                console.log(avg)
+            }
+            document.write(avg)
+        };
+        let arr = [10, 10, 30];
+        arrayAverage(arr);
+    </script>
+</body>
+</html>

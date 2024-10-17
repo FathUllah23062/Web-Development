@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practiceQs6</title>
+</head>
+<body>
+
+    <script>
+        // checking if all numbers in our array are multiple of 10 or not;
+        let arr = [10, 20, 30, 40, 50];
+        let mul = arr.every(el => {
+            if (el % 10 == 0) {
+                document.write("Yes all numbers are the multiple of 10.");
+            } else {
+                document.write("No all numbers are not multiple of 10");
+            }
+        });
+
+        // create a function to  find the min number in an array;
+
+        let min = arr.reduce((ac, el) => {
+            if (ac < el) {
+                return ac;
+            } else {
+                return el;
+            }
+        })
+        document.write(`<br/>The minimum number in an array is : ${min}`)
+
+        // b=5 is called default parameter
+        const table = (a, b = 5) => {
+            return a * b;
+        };
+
+    </script>
+</body>
+</html>

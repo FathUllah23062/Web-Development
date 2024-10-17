@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array</title>
+</head>
+<body>
+
+
+    <script>
+        let month = ["February", "January", "March", "April"];
+
+        // convert it to this state   month=["july","june","march","august"];
+
+        document.write("Before <br/>");
+        for (index of month) {
+            document.write(index + " , ");
+
+        }
+
+        // to remove the first item from the array ;
+
+        month.shift();
+        month.shift();
+
+        // to add the item in top of the array ;
+
+        month.unshift("January", "February");
+
+        document.write("<br/>After<br/>");
+
+        for (ind of month) {
+            document.write(ind + " , ");
+        }
+
+        document.write("<br/>Concat arrays<br/>");
+
+        let arr1 = ["January", "February", "March"];
+        let arr2 = ["April", "May", "June"];
+
+        // to concat to arrays
+
+        let finelArray = arr1.concat(arr2);
+
+
+        for (item of finelArray) {
+            document.write(item + "  ,  ");
+        }
+
+        //  to print in reverse sequence a array 
+
+        document.write("<br/>Reverse of the Concat arrays<br/>");
+
+        let rev = finelArray.reverse();
+
+        for (item of rev) {
+            document.write(item + "  ,  ");
+        }
+
+        // sortin a array !
+        // we can sort only a sring of array not the numbers!
+
+
+        document.write("<br/>Unsorted array<br/>");
+
+        // Unsorted array
+
+        let unSortArray = ["Salman", "Fahad", "Ali", "Ilham", "Burhan", "Khan",];
+
+
+        for (item of unSortArray) {
+            document.write(item + "  ,  ");
+        }
+
+        document.write("<br/>sorted array<br/>");
+
+        // Sorted array
+
+        let sortedArray = unSortArray.sort();
+
+        for (item of sortedArray) {
+            document.write(item + "  ,  ");
+        }
+
+        document.write("<br/>The indexOf Javascript <br/>");
+
+        // Question: finde the indexOf the "javascript" if it is reverse;
+        let languages = ["C", "C++", "Html", "Javascript", "Phyton", "Java", "C#", "SQL"];
+        let indL = languages.indexOf("Javascript")
+
+        document.write(`the index of javascript when the array is not reversed! : ${indL} <br/>`)
+
+        let revLanguages = languages.reverse();
+        let indexOfJavascript = revLanguages.indexOf("Javascript");
+        document.write(`the index of javascript when the array is reversed! : ${indexOfJavascript} <br/>`)
+    </script>
+</body>
+</html>

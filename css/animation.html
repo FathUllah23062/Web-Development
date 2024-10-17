@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animations</title>
+    <style>
+        .animation img{
+            /* animation-name: car;
+            animation-duration: 2s;
+            animation-delay: 1s;
+            animation-iteration-count: 2;
+            animation-direction: alternate; */
+            /* animation: 3s ease-in-out 1s infinite running car; */
+            animation: 5s linear 3s infinite alternate car;
+        }
+        @keyframes car {
+            0%{
+               margin-left: 0px;
+            }20%{
+               margin-left: 100%;
+            }
+            40%{
+                margin-top: 100%;
+            }
+            60%{
+                margin-right: 100%;
+
+            }
+            100%{
+                margin-bottom: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="animation">
+        <img src="../assets/car.jpg" alt="" width="200" height="200">
+    </div>
+</body>
+</html>
