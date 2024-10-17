@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practiceQs In Dom</title>
+
+</head>
+<body>
+    <input type="text" placeholder="Change to username">
+    <button id="changeToBtn">Q2 Button</button>
+    <h1></h1>
+    <p></p>
+
+    <script>
+        // Q1: add the following element to the container using only javascript and the dom methods;
+        // i) a <p> tag with text that says "Hey I'm red "
+        // ii) h3 tag with blue text that says "I'm blue h3!"
+        // iii) create a div with a black border and pick background color with following elements inside of it
+        // . h1 tag that says "I'm in a div"
+        // . p tag that says "ME TOO!"
+        let body = document.querySelector("body");
+        let container = document.createElement("div");
+        container.classList.add("container");
+        let p = document.createElement("p");
+        p.innerText = "Hey I'm red";
+        p.style.color = "red";
+        let h3 = document.createElement("h3");
+        h3.innerText = "Hey I'm blue";
+        h3.style.color = "blue";
+        let div = document.createElement("div");
+        div.style.border = "1px solid black";
+        div.style.backgroundColor = "pink"
+        let h1 = document.createElement("h1");
+        let insideDivP = document.createElement("p");
+        h1.innerText = "I'm in a div";
+        insideDivP.innerText = "ME TOO!";
+        body.append(container);
+        container.append(p);
+        container.append(h3);
+        container.append(div);
+        div.append(h1)
+        div.append(insideDivP)
+
+        // Qs2. Create a new input and button element on the page using JavaScript only. Set the
+        // text of button to "Click me';
+        let input = document.createElement("input");
+        input.type = "search"
+        let btn = document.createElement("button");
+        btn.innerText = "Click me";
+        body.append(input);
+        body.append(btn);
+
+        // Qs2. Add following attributes to the element :
+        // Change placeholder value of input to "username"
+        // Change the id of button to "btn';
+
+        let changInput = document.querySelector("input");
+        changInput.placeholder = "username";
+        changInput.type = "search"
+        let button = document.querySelector("button");
+        button.setAttribute("id", "btn");
+
+        // Qs3. Access the btn using the querySelector and button id. Change the button background
+        // color to blue and text color to white.
+        button.style.backgroundColor = "blue";
+        button.style.color = "white";
+
+        // Qs4. Create an hl element on the page and set its text to "DOM Practice" underlined.
+        // Change its color to purple.
+        let pageH1 = document.querySelector("h1");
+        pageH1.innerText = "DOM Practice";
+        pageH1.style.color = "purple";
+        pageH1.style.textDecoration = "underline";
+
+        // Qs5. Create a p tag on the page and set its text to "Apna College Delta Practice",
+        // where Delta is bold.
+        let pageP = document.querySelector("p");
+        pageP.innerHTML = "Apna College <b>Delta </b>Practice"
+
+    </script>
+</body>
+</html>

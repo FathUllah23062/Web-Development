@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises</title>
+</head>
+<body>
+    <h1>Apna College</h1>
+
+    <script>
+        // function saveToDb(data) {
+        //     return myPromise = new Promise((resoled, reject) => {
+        //         let interNetSpeed = Math.floor(Math.random() * 10) + 1;
+        //         if (interNetSpeed > 4) {
+        //             resoled("Promise is Resoled");
+        //         } else {
+        //             reject("Promise is Rejected");
+        //         }
+
+        //     })
+        // }
+
+        // saveToDb("Apna College").then((resoled) => {
+        //     // in this case the resoled will show the resoled state of promise;
+        //     console.log("Data is Saved ");
+        //     console.log(resoled);
+        //     return saveToDb("Data2 to  database").then((resoled) => {
+        //         console.log("Data2 is Saved ")
+        //         console.log(resoled);
+        //         return saveToDb("Data3 to database").then((resoled) => {
+        //             console.log("Data3 is saved")
+        //             console.log(resoled);
+        //         })
+        //     })
+        // })
+        //     .catch((e) => {
+        //         //in this case e will catch the reject state of promise
+        //         console.log("Weak Connection");
+        //         console.log(e);
+        //     });
+        // Do the activity of changing the color which we did in callBackHell page whith the help of promises;
+        let h1 = document.querySelector("h1");
+        function colorChange(color, delay) {
+            return colorPromise = new Promise((res, rej) => {
+                (setTimeout(() => {
+                    h1.style.color = color
+                    res("Color is Changed")
+                }, delay));
+            })
+        }
+
+        // we will used this to remove the call back hell promblem;
+        //but this is not the good practice instied of this we can used async and await method;
+        // colorChange("red", 1000)
+        //     .then(() => {
+        //         return colorChange("green", 1000)
+        //             .then(() => {
+        //                 return colorChange("blue", 1000)
+        //                     .then(() => {
+        //                         return colorChange("yellow", 1000)
+        //                     })
+        //             })
+        //     }).catch((e) => {
+        //         h1.innerText = `Color not added becuase of  ${e}`;
+        //     })
+        const execution = async () => {
+            await colorChange("red", 1000);
+            await colorChange("green", 1000);
+            await colorChange("blue", 1000);
+            await colorChange("yellow", 1000);
+            colorChange("red", 1000);
+        };
+        execution();
+    </script>
+</body>
+</html>

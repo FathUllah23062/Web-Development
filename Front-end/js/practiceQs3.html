@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practiceQs3</title>
+</head>
+<body>
+
+
+    <script>
+        // Q1: wite a program to get first n element (n can be any postive number);
+        let n = 3;
+        let arr = [6, 8, 10, 12, 14];
+
+        document.write("Total Array :  ")
+
+        //    to print total array 
+
+        for (item of arr) {
+            document.write(item + " , ")
+        }
+
+        document.write(" <br/> <br/> First n elements :  ")
+
+        // to print first n element of the array 
+
+        let firstnElements = arr.slice(0, n);
+
+        for (item of firstnElements) {
+            document.write(item + " , ")
+        }
+
+        // Q2: wite a program to get last n element (n can be any postive number);
+        let lastnElements = arr.slice(arr.length - n);
+
+        document.write(" <br/> <br/> Last n elements :  ")
+
+        // to print last n element of the array 
+
+        for (item of lastnElements) {
+            document.write(item + " , ")
+        }
+
+        // Qs3. Write a JavaScript program to check whether a string is blank or not.
+        let string = prompt("To Check  your string it is blank or not :", "");
+        if (string.length > 0) {
+            document.write(`Sting is not blank : ${string}`)
+        } else {
+            document.write(`Sting is blank!`)
+        }
+
+        // Qs4. Write a JavaScript program to test whether the character at the given 
+        // index is lower case or not.
+
+        let check = "apnaCollege";
+        let idx = 3;
+
+        if (check[idx] == check[idx].toLowerCase()) {
+            document.write(` <br/> <br/>The  word on given index is in lower case  which is : ${check[idx]} <br/> <br/> `);
+        } else {
+            document.write(` <br/> <br/> The  word on given index is not in lower case which is : ${check[idx]} <br/>`);
+        }
+
+        // Qs5. Write a JavaScript program to check if an element exists in an array or not.
+        let arr3 = [10, 20, 22, 60];
+        let element = 60;
+        if (arr3.indexOf(element) >= 0) {
+            document.write(`The element exist in array`)
+        } else {
+            document.write(`The element is not exist in array`)
+        }
+
+    </script>
+</body>
+</html>

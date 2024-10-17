@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeOut&setInterval</title>
+</head>
+<body>
+
+
+    <script>
+        setTimeout(() => {
+            document.write("Hello this is setTimeout function<br/>")
+        }, 3000);
+
+        let intervalWork = setInterval(() => {
+            document.write("Hello this is setInterval function. It will continuesly execute until it clear <br/>");
+        }, 1000);
+
+        setTimeout(() => {
+
+            clearInterval(intervalWork);
+        }, 6000);
+
+    </script>
+</body>
+</html>

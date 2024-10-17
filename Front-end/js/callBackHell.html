@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Back Hell</title>
+</head>
+<body>
+    <h1>Apna College</h1>
+
+    <script>
+        //Javascript is the single thread language means that javascript can do one thing at a time;
+        // if we want to delay some thin we used the setTimeOut function but javascript dos't wait for 
+        // setTimeOut actually the brouser delay setTimeOut and then put it to the call stack of javascript;
+        // for the delay or asanqronise work we used some theqnece which are below;
+        let h1 = document.querySelector("h1");
+        // setTimeout(() => {
+        //     h1.style.color = "red";
+        // }, 1000);
+        // setTimeout(() => {
+        //     h1.style.color = "green";
+        // }, 2000);
+        // setTimeout(() => {
+        //     h1.style.color = "blue";
+        // }, 3000);
+        // setTimeout(() => {
+        //     h1.style.color = "yellow";
+        // }, 4000);
+
+        // the above code will work but it is not good practice;
+
+        // function colors(col, delay) {
+        //     setTimeout(() => {
+        //         h1.style.color = col;
+        //     }, delay);
+        // }
+        // setTimeout(colors("red", 1000));
+        // setTimeout(colors("green", 2000));
+        // setTimeout(colors("blue", 3000));
+        // setTimeout(colors("yellow", 4000));
+        // setTimeout(colors("red", 5000));
+
+        // the above code will also work but it is not good practice too;
+
+        function colors(col, delay, nextColor) {
+            setTimeout(() => {
+                h1.style.color = col;
+                if (nextColor) nextColor();
+            }, delay);
+
+        }
+
+        colors("red", 1000, () => {
+            colors("green", 1000, () => {
+                colors("blue", 1000, () => {
+                    colors("yellow", 1000, () => {
+                        colors("red", 1000);
+                    });
+                });
+            })
+        });
+        //this is called call back hell and we can used promises and async/await instid of this 
+        // promises and async/awit are make the code mor understadable thats way we used the promises
+        // and async/await;
+
+    </script>
+</body>
+</html>

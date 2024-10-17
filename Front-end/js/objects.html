@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>objects</title>
+</head>
+<body>
+    <h1>Username : </h1>
+    <h2>Content</h2>
+    <h3>Likes</h3>
+    <h4>Repost</h4>
+    <h5>Tags</h5>
+    <script>
+        let h1 = document.querySelector("h1");
+        let h2 = document.querySelector("h2");
+        let h3 = document.querySelector("h3");
+        let h4 = document.querySelector("h4");
+        let h5 = document.querySelector("h5");
+        const post = {
+
+            username: "Burhan",
+            content: "This is the tutorials for web tech",
+            likes: 30,
+            repost: 34,
+            tags: ["@fathullah", "@ahmadali"]
+
+        };
+        h1.innerText = `${post.username}`;
+        h2.innerText = `${post.content}`;
+        h3.innerText = `${post.likes}`;
+        h4.innerText = `${post.repost}`;
+        h5.innerText = `${post.tags}`;
+
+        //updation of the existing key 
+        post.repost = 5;
+        document.write(post.repost + "<br/>")
+
+        // adding a new key!
+        post.new = "this is new key value in object";
+        document.write(post.new)
+
+        // Nested objects;
+        const student = {
+            ali: {
+                makrs: 90,
+                address: "Mayar"
+            },
+            burhan: {
+                makrs: 80,
+                address: "Baden"
+            },
+            Faisal: {
+                makrs: 96,
+                address: "Mayar"
+            },
+        };
+        document.write("<br/>" + student.ali.makrs + "<br/>");
+        document.write("<br/>" + student.ali.address + "<br/>");
+        document.write("<br/>" + student.burhan.address + "<br/>");
+        document.write("<br/>" + student.Faisal.makrs + "<br/>");
+
+        // Array of objects;
+        let studentInfo = [
+            {
+                name: "Burhan",
+                age: 22,
+                address: "Baden"
+            },
+            {
+                name: "Ali",
+                age: 20,
+                address: "Mayar"
+            },
+            {
+                name: "Imad",
+                age: 21,
+                address: "Kambad"
+            }
+        ];
+        for (item of studentInfo) {
+            document.write("<br/>" + item.name + "<br/>")
+            document.write("<br/>" + item.age + "<br/>")
+            document.write("<br/>" + item.address + "<br/>")
+        }
+
+        // to get random number between 1 and 6;
+        let randomNo = Math.floor(Math.random() * 6) + 1;
+        document.write(`The random number between 1 and 6 : ${randomNo}`)
+
+        // to get random number between 1 and 100;
+
+        let randomNo2 = Math.floor(Math.random() * 100) + 1;
+        document.write(`<br/> The random number between 1 and 100 : ${randomNo2}`);
+        let power = Math.pow(2, 2);
+        document.write(`<br/> The power of two is : ${power} <br/>`);
+        let pi = Math.PI;
+        document.write(`The value of pi is :${pi} <br/>`);
+
+        let abslot = Math.abs(-4);
+        document.write(`the ablsot value of -4 is : ${abslot} <br/>`);
+
+    </script>
+</body>
+</html>

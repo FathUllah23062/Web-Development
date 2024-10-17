@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>map&filter&every&some</title>
+</head>
+<body>
+
+
+    <script>
+        // a map function can return the new array like we did in belwo code;
+        //but the new array will have the same size of it's original array;
+
+        //  to return the double of the existing array using map function;
+        let arr = [20, 30, 40, 10];
+        let double = arr.map((element) => {
+            return element * 2;
+        });
+
+
+        // to print the double of the array;
+
+        double.map(ele => {
+            document.write(ele + "<br/>")
+        })
+        let sutdents = [
+            {
+                name: "Burhan",
+                marks: 94
+            },
+            {
+                name: "Faisal",
+                marks: 98
+            },
+            {
+                name: "Imad",
+                marks: 96
+            },
+            {
+                name: "Fath ullah",
+                marks: 90
+            }
+        ];
+        sutdents.map(el => {
+            document.write(el.name + "   ")
+            document.write(el.marks + " <br/>")
+        })
+        let nums = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+        // to take the even numbers form the array using filter function;
+
+        let even = nums.filter(num => {
+            return num % 2 == 0;
+        });
+
+        // to print the even numbers form the array using map function;
+        even.map(el => {
+            document.write(`Even numbers form array : ${el} <br/>`);
+        });
+
+        // to take the odd numbers form the array using filter function;
+
+        let odd = nums.filter(num => {
+            return num % 2 != 0;
+        });
+
+        // to print the odd numbers form the array using map function;
+
+        odd.map(el => {
+            document.write(`Odd numbers form array : ${el} <br/>`);
+        })
+
+        // every method return true if all the condtion is true for all the elements of array ;
+        // and it will return false if one of the array element has the false value for the condtion;
+        //every method is like the && logical operator;
+
+        let arr1 = [1, 3, 57, 7, 9];
+        let ev = arr1.every(el => {
+            return el % 2 != 0;
+        })
+        // some  method return true only one element has ture value for the condtion;
+        // and it will return false if all the elements are false for the codition;
+        // some function is the oposite of every function , it is like the || operator;
+
+        let arr2 = [2, 4, 8, 12, 6];
+        let so = arr1.some(el => {
+            return el % 2 != 0;
+        });
+        let name = ["F", "a", "t", "h", "u", "l", "l", "a", "h"];
+        let fullName = name.reduce((ac, el) => {
+            return ac + el;
+        });
+        document.write(`The name form the reducer function is : ${fullName}`)
+
+
+        // finding the maximum value in the array using reduce method;
+        let arr3 = [2, 1, 4, 10, 40, 8];
+        let max = arr3.reduce((ac, el) => {
+            if (ac > el) {
+                return ac;
+
+            } else {
+                return el;
+            }
+        })
+        document.write(`<br/>Finding the maximum value in the array using the reduce method : ${max} `)
+
+    </script>
+</body>
+</html>

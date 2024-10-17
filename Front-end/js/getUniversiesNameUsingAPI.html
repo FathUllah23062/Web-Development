@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Universties Data using API</title>
+
+</head>
+<body>
+    <label for="">Enter the country name to pitch the universities of that country!</label><br><br>
+    <input type="text" placeholder="Enter the country name ">
+    <button>Get</button>
+    <ul></ul>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script>
+        let btn = document.querySelector("button");
+        let ul = document.querySelector("ul");
+
+        const getUnivirsties = async () => {
+            let input = document.querySelector("input");
+            let url = `http://universities.hipolabs.com/search?name=${input.value}`
+
+            if (input.value != "") {
+                let res = await axios.get(url);
+                input.value = "";
+                ul.innerText = "";
+
+                for (uni of res.data) {
+                    let li = document.createElement("li");
+                    li.innerText = uni.name;
+                    ul.append(li)
+
+                }
+            }
+        }
+        btn.addEventListener("click", getUnivirsties);
+    </script>
+</body>
+</html>

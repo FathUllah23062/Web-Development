@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>functions</title>
+</head>
+<body>
+
+
+    <script>
+        // make a function that return the average of three number;
+        function avg(num1, num2, num3) {
+            let avgOfNum = (num1 + num2 + num3) / 3;
+            document.write(avgOfNum + "<br/>");
+        }
+        avg(20, 20, 5);
+        // make the function that return the sum form 1 to n;
+        function sum() {
+            let add = 0;
+            let n = prompt("Enter the number you want the sum from 1 to it :", "");
+            for (let i = 1; i <= n; i++) {
+                add += i;
+            }
+            document.write(add);
+        }
+        sum()
+
+        // High order function are the function that acept the other function as in orguments;
+        function multipleGreeting(func, count) {
+            for (let i = 1; i <= count; i++) {
+                func();
+            }
+        }
+
+        function greet() {
+            document.write("<br/>Asalam-u-alikom <br/>");
+        }
+        multipleGreeting(greet, 3);
+
+
+
+        // arrow functions
+
+        let sum2 = () => document.write("Hello word")
+        sum2();
+    </script>
+</body>
+</html>

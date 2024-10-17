@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .todo {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            width: 500px;
+            background-color: #eee;
+            padding: 20px;
+        }
+
+        .todo input {
+            border-radius: 5px;
+            width: 267px;
+            height: 35px;
+            margin-right: 27px;
+
+        }
+
+        .todo button {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="todo">
+
+        <div>
+            <input type="text">
+            <button>+</button>
+        </div>
+        <div>
+            <ul></ul>
+        </div>
+        <script>
+            let todo = [];
+
+            let inp = document.querySelector("input");
+            let btn = document.querySelector("button");
+            let ul = document.querySelector("ul");
+            btn.addEventListener("click", () => {
+                todo.push(inp.value);
+                let li = document.createElement("li");
+                ul.append(li)
+                for (item of todo) {
+
+                    li.innerText = item;
+
+                }
+                inp.value = "";
+            })
+        </script>
+    </div>
+</body>
+</html>

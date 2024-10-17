@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practiceQs7</title>
+</head>
+<body>
+
+
+    <script>
+        // Qs1. Square and sum the array elements using the arrow function and then find the
+        // average of the array.
+        const sqSumArrayEle = () => {
+            let arr = [2, 4, 6, 8];
+            let square = arr.map((el) => {
+                return el * el;
+
+            });
+            let sum = square.reduce(((avg, el) => {
+                return (avg + el)
+            }))
+            let average = sum / square.length;
+            document.write(`The square and the sum and the average of the array elements is : ${average}`);
+
+        };
+        sqSumArrayEle();
+
+        // Qs2. Create a new array using the map function whose each element is equal to the
+        //      original element plus 5.
+        let arr2 = [2, 3, 4, 5, 7];
+        let newArray = arr2.map(el => {
+            return el + 5;
+        });
+        for (item of newArray) {
+            document.write(`<br/>Original element + 5 = ${item} <br/>`)
+        }
+
+
+        //  Qs3. Create a new array whose elements are in uppercase of words present in the
+        //      original array.
+        let arr3 = ["ali", "burhan", "faisal", "imad"];
+        let uppercaseArray = arr3.map(el => {
+            return el.toUpperCase();
+        });
+        for (item of uppercaseArray) {
+            document.write(`The element of array in uppercase : ${item}<br/>`);
+        }
+
+
+        // Qs4. Write a function called mergeObjects that accepts two objects and returns a new
+        //     object which contains all the keys and values of the first object and second object.
+
+        const mergeObjects = (obj1, obj2) => {
+            let merge = ({ ...obj1, ...obj2 })
+            document.write(`The values of merge objects : ${merge.name} <br/>`);
+            document.write(`The values of merge objects : ${merge.address} <br/>`);
+            document.write(`The values of merge objects : ${merge.age} <br/>`);
+            document.write(`The values of merge objects : ${merge.marks} <br/>`);
+
+
+        }
+        mergeObjects({ name: "Burhan", address: "Baden" }, { age: 26, marks: 96 });
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>async and await</title>
+</head>
+<body>
+    <h1>Apna College</h1>
+
+    <script>
+        //when we include the async keyword with the function it will return the promise automatically
+        //and we can use the promises method with this function like .then method and .catch method.
+        //what ever it return it will be the result of that promise
+        // const demo = async () => {
+        //     console.log("Hello")
+
+        // };
+        // demo().then((result) => {
+        //     document.write("Promise1 is resoveled <br/>")
+        // }).then(() => {
+        //     return demo().then(() => {
+        //         document.write("Promise2 is resoveld <br/>")
+        //     }).then(() => {
+        //         return demo().then(() => {
+        //             document.write("Promise3 is resoveld")
+        //         })
+        //     })
+        // }).catch((e) => {
+        //     document.write("Some error")
+        // })
+        let h1 = document.querySelector("h1");
+        const colorChange = (color, delay) => {
+            return new Promise((resolve, reject) => {
+                let randomNumber = Math.floor(Math.random() * 5) + 1;
+                if (randomNumber < 3) {
+                    reject("The promise is reject")
+                }
+                setTimeout(() => {
+                    h1.style.color = color;
+                    resolve("The promise is resovel");
+                }, delay);
+            })
+
+        };
+        const execution = async () => {
+
+            // for the handling of rejection we will put this code in try block and catch the error in the catch block;
+            try {
+
+                await colorChange("red", 1000);
+                await colorChange("green", 1000);
+                await colorChange("blue", 1000);
+                await colorChange("yellow", 1000);
+                colorChange("red", 1000);
+            }
+
+            catch (e) {
+                document.write("Some error in execution " + e);
+            }
+            let a = 5;
+            document.write(a);
+
+        };
+        execution();
+    </script>
+</body>
+</html>
